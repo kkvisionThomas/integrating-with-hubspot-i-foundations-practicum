@@ -1,15 +1,21 @@
-//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
-
-//- doctype html
-//- html 
-//-     head 
-//-         title= `${title}`
-//-         meta(name="viewport" content="width=device-width, initial-scale=1")
-//-         link(rel="stylesheet", href="/css/style.css")
-//-     body    
-//-         h1 Contacts
-//-         .cards 
-//-             each contact in data
-//-                 .card 
-//-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-//-                     p.card__email #{contact.properties.email}
+//- views/contacts.pug
+doctype html
+html
+  head
+    title Homepage | Integrating With HubSpot
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Homepage | Integrating With HubSpot
+    a(href="/update-cobj") Add to this table
+    table
+      thead
+        tr
+          th Name
+          th Elemental Type
+          th Level
+      tbody
+        each contact in customObjects
+          tr
+            td= contact.properties.name || 'N/A'
+            td= contact.properties.elemental_type || 'N/A'
+            td= contact.properties.level || 'N/A'

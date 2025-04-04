@@ -1,0 +1,20 @@
+//- views/update.pug
+doctype html
+html
+  head
+    title Update Custom Object Form | Integrating With HubSpot I Practicum
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Update Custom Object Form
+    form(action="/update-cobj" method="POST")
+      label(for="name") Name:
+      input(type="text" id="name" name="name" required)
+      br
+      label(for="elemental_type") Elemental Type:
+      input(type="text" id="elemental_type" name="elemental_type" required)
+      br
+      label(for="level") Level:
+      input(type="number" id="level" name="level" required)
+      br
+      button(type="submit") Submit
+    a(href="/") Return to the homepage
